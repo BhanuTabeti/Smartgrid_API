@@ -3,7 +3,9 @@ var { pool: db } = require('../configs/db.js');
 
 var meter = {};
 
-meter.getReading = async function (block, meterId, callback) {
+meter.getReading = async function (req, res) {
+  var block = req.query.block;
+  var meterId = req.query.meterId; 
 	var blockString;
 
   //Change this an Util or Something  
@@ -22,8 +24,9 @@ meter.getReading = async function (block, meterId, callback) {
   db.query(query, (err, result) => {
     if (err) {
       console.log(err);
+      res.send(err);
     }
-    return callback(err, result);
+      res.send(result);
   });
 };
 
