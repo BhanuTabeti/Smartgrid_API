@@ -30,4 +30,17 @@ meter.getReading = async function (req, res) {
   });
 };
 
+meter.getAblockHist = async function (req, res) {
+  console.log('received query for A block total');
+
+  const a_query = 'SELECT * FROM `block_totals` order by tstamp desc limit 120';
+
+  db.query(a_query, function (err, result, fields) {
+    if (err) throw err;
+
+    res.json(result);
+    console.log('server sending A block historical data');
+  });
+}
+
 module.exports = meter;
