@@ -469,93 +469,93 @@ io.sockets.on('connection', function(socket){
  });
 
 
-socket.on('request_history',function(data){
-  //console.log('server received : '+data);
-  if (data == 'atot') {
-	  console.log('received query for A block total');
-	  var a_query = 'SELECT * FROM `block_totals` order by tstamp desc limit 120';
-	  con.query(a_query, function (err, result, fields) {
-    if (err) throw err;
-    A_history_result = result;
-	io.sockets.emit('a_block_history', A_history_result);
-	console.log('server sending A block historical data');
-    });
+// socket.on('request_history',function(data){
+//   //console.log('server received : '+data);
+//   if (data == 'atot') {
+// 	  console.log('received query for A block total');
+// 	  var a_query = 'SELECT * FROM `block_totals` order by tstamp desc limit 120';
+// 	  con.query(a_query, function (err, result, fields) {
+//     if (err) throw err;
+//     A_history_result = result;
+// 	io.sockets.emit('a_block_history', A_history_result);
+// 	console.log('server sending A block historical data');
+//     });
 
-  }
-
-
-  //io.sockets.emit('su_data_for_plot', data)
-})
+//   }
 
 
-socket.on('client_tstamp', function(data){
-//console.log(data);
+//   //io.sockets.emit('su_data_for_plot', data)
+// })
 
-// var con_bh = mysql.createConnection({
-//   host: "127.0.0.1",
-//   port: "3306",
-//   user: "bms",
-//   password: "Sglab_1234",
-//   database: "IITH_SS_data"
+
+// socket.on('client_tstamp', function(data){
+// //console.log(data);
+
+// // var con_bh = mysql.createConnection({
+// //   host: "127.0.0.1",
+// //   port: "3306",
+// //   user: "bms",
+// //   password: "Sglab_1234",
+// //   database: "IITH_SS_data"
+// // });
+// // con_bh.connect(function(err) {
+// //   if (err) throw err;
+// //   console.log("Mysql connection opened with SS database!");
+// // });
+
+
+// console.log('server will connect to database of boys hostel');
+// var bh_query="SELECT * FROM `SS_ems` WHERE `meterID` = '14' and `tstamp` < '"+data+"' order by `tstamp` DESC limit 60"
+// con_bh.query(bh_query, function (err, result, fields) {
+// if (err) throw err;
+// bh_result = result;
+// io.sockets.emit('bh_data', bh_result);
+// console.log(bh_result[59].Ptot);
 // });
-// con_bh.connect(function(err) {
-//   if (err) throw err;
-//   console.log("Mysql connection opened with SS database!");
+
+
+
 // });
 
 
-console.log('server will connect to database of boys hostel');
-var bh_query="SELECT * FROM `SS_ems` WHERE `meterID` = '14' and `tstamp` < '"+data+"' order by `tstamp` DESC limit 60"
-con_bh.query(bh_query, function (err, result, fields) {
-if (err) throw err;
-bh_result = result;
-io.sockets.emit('bh_data', bh_result);
-console.log(bh_result[59].Ptot);
-});
-
-
 
 });
 
 
-
-});
-
-
- function run_query(meterID) {
- con.query("select * from `sensorreadings` where `date` = (select MAx(`date`) from `sensorreadings` where `meter_number` = "+
-          meterID +") and `meter_number` = "+meterID,
- function (err, result, fields) {
-  if (err) throw err;
-  meter_result = result;
-  io.sockets.emit('meter_data', meter_result);
-  console.log(meter_result);
-  });
- }
+ // function run_query(meterID) {
+ // con.query("select * from `sensorreadings` where `date` = (select MAx(`date`) from `sensorreadings` where `meter_number` = "+
+ //          meterID +") and `meter_number` = "+meterID,
+ // function (err, result, fields) {
+ //  if (err) throw err;
+ //  meter_result = result;
+ //  io.sockets.emit('meter_data', meter_result);
+ //  console.log(meter_result);
+ //  });
+ // }
 
 
-  function a_run_query(meterID) {
-  con.query("select * from `sensorreadings` where `date` = (select MAx(`date`) from `sensorreadings` where `meter_number` = "+
-           meterID +" and `block` = 'Block_A') and `meter_number` = "+meterID,
-  function (err, result, fields) {
-   if (err) throw err;
-   meter_result = result;
-   io.sockets.emit('a_meter_data', meter_result);
-   console.log(meter_result);
-   });
-  }
+ //  function a_run_query(meterID) {
+ //  con.query("select * from `sensorreadings` where `date` = (select MAx(`date`) from `sensorreadings` where `meter_number` = "+
+ //           meterID +" and `block` = 'Block_A') and `meter_number` = "+meterID,
+ //  function (err, result, fields) {
+ //   if (err) throw err;
+ //   meter_result = result;
+ //   io.sockets.emit('a_meter_data', meter_result);
+ //   console.log(meter_result);
+ //   });
+ //  }
 
 
-   function c_run_query(meterID) {
-   con.query("select * from `sensorreadings` where `date` = (select MAx(`date`) from `sensorreadings` where `meter_number` = "+
-            meterID +" and `block` = 'Block_C') and `meter_number` = "+meterID,
-   function (err, result, fields) {
-    if (err) throw err;
-    meter_result = result;
-    io.sockets.emit('c_meter_data', meter_result);
-    console.log(meter_result);
-    });
-   }
+ //   function c_run_query(meterID) {
+ //   con.query("select * from `sensorreadings` where `date` = (select MAx(`date`) from `sensorreadings` where `meter_number` = "+
+ //            meterID +" and `block` = 'Block_C') and `meter_number` = "+meterID,
+ //   function (err, result, fields) {
+ //    if (err) throw err;
+ //    meter_result = result;
+ //    io.sockets.emit('c_meter_data', meter_result);
+ //    console.log(meter_result);
+ //    });
+ //   }
 
 
   function vvit_run_query(vvit_meterID) {
