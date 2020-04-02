@@ -469,17 +469,13 @@ io.sockets.on('connection', function(socket){
  });
 
 
-<<<<<<< HEAD
-=======
 // PORTED
->>>>>>> ea439899e249a9b2457fb483fc774691ac91e60f
 // socket.on('request_history',function(data){
 //   //console.log('server received : '+data);
 //   if (data == 'atot') {
 // 	  console.log('received query for A block total');
 // 	  var a_query = 'SELECT * FROM `block_totals` order by tstamp desc limit 120';
 // 	  con.query(a_query, function (err, result, fields) {
-<<<<<<< HEAD
 //     if (err) throw err;
 //     A_history_result = result;
 // 	io.sockets.emit('a_block_history', A_history_result);
@@ -521,28 +517,6 @@ io.sockets.on('connection', function(socket){
 
 
 // });
-=======
-//       if (err) throw err;
-//       A_history_result = result;
-//   	  io.sockets.emit('a_block_history', A_history_result);
-//   	  console.log('server sending A block historical data');
-//     });
-//   }
-// });
-
-
-socket.on('client_tstamp', function(data){
-  console.log('server will connect to database of boys hostel');
-  var bh_query="SELECT * FROM `SS_ems` WHERE `meterID` = '14' and `tstamp` < '"+data+"' order by `tstamp` DESC limit 60"
-  con_bh.query(bh_query, function (err, result, fields) {
-    if (err) throw err;
-    bh_result = result;
-    io.sockets.emit('bh_data', bh_result);
-    console.log(bh_result[59].Ptot);
-  });
-});
->>>>>>> ea439899e249a9b2457fb483fc774691ac91e60f
-
 
 
 });
