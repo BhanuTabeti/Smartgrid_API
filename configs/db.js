@@ -9,8 +9,7 @@ pool.vvit_con = mysql.createPool({
 	port: process.env.PORT,
 	user: process.env.USER,
 	password: process.env.PASSWORD,
-	database: process.env.VVIT_DB,
-	socketPath: process.env.SOCKETPATH
+	database: process.env.VVIT_DB
 });
 
 pool.ouce_con = mysql.createPool({
@@ -18,8 +17,7 @@ pool.ouce_con = mysql.createPool({
 	port: process.env.PORT,
 	user: process.env.USER,
 	password: process.env.PASSWORD,
-	database: process.env.OUCE_DB,
-	socketPath: process.env.SOCKETPATH
+	database: process.env.OUCE_DB
 });
 
 
@@ -28,8 +26,7 @@ pool.gnits_con = mysql.createPool({
 	port: process.env.PORT,
 	user: process.env.USER,
 	password: process.env.PASSWORD,
-	database: process.env.GNITS_DB,
-	socketPath: process.env.SOCKETPATH
+	database: process.env.GNITS_DB
 });
 
 
@@ -38,8 +35,7 @@ pool.pvpsit_con = mysql.createPool({
 	port: process.env.PORT,
 	user: process.env.USER,
 	password: process.env.PASSWORD,
-	database: process.env.PVPSIT_DB,
-	socketPath: process.env.SOCKETPATH
+	database: process.env.PVPSIT_DB
 });
 
 
@@ -48,8 +44,7 @@ pool.demo_con = mysql.createPool({
 	port: process.env.PORT,
 	user: process.env.USER,
 	password: process.env.PASSWORD,
-	database: process.env.DEMO_DB,
-	socketPath: process.env.SOCKETPATH
+	database: process.env.DEMO_DB
 });
 
 pool.demo_bvrith_con = mysql.createPool({
@@ -57,8 +52,7 @@ pool.demo_bvrith_con = mysql.createPool({
 	port: process.env.PORT,
 	user: process.env.USER,
 	password: process.env.PASSWORD,
-	database: process.env.BVRITH_DB,
-	socketPath: process.env.SOCKETPATH
+	database: process.env.BVRITH_DB
 });
 
 pool.root_con = mysql.createPool({
@@ -66,8 +60,7 @@ pool.root_con = mysql.createPool({
 	port: process.env.ROOT_PORT,
 	user: process.env.ROOT_USER,
 	password: process.env.ROOT_PASSWORD,
-	database: process.env.ROOT_DB,
-	socketPath: process.env.SOCKETPATH
+	database: process.env.ROOT_DBs
 });
 
 pool.bh_con = mysql.createPool({
@@ -78,4 +71,4 @@ pool.bh_con = mysql.createPool({
 	database: process.env.IITH_SS_DB
 });
 
-module.exports = pool
+module.exports = pool;
