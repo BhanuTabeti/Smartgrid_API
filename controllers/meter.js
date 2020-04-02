@@ -43,17 +43,4 @@ meter.getAblockHist = async function (req, res) {
   });
 };
 
-// meter.getClientTstamp = async function (req, res) {
-//   console.log('server will connect to database of boys hostel');
-//   // tstamp be the query in the URL
-//   var tstamp = req.query.tstamp;
-//   var bh_query = `SELECT * FROM `SS_ems` WHERE `meterID` = '14' and `tstamp` < ${db.escape(tstamp)} order by `tstamp` DESC limit 60`;
-//   db.query(bh_query, function (err, result, fields) {
-//     if (err) res.status(500).send(err);
-
-//     res.json(result);
-//     console.log(result[59].Ptot);
-//   });
-// };
-
 module.exports = meter;
