@@ -9,201 +9,201 @@ var meterID='16';
 var vvit_meterID='2';
 
 server.listen(2048);
-app.get('/',function(req,res){res.sendFile(__dirname + '/public/home.html');});
-app.get('/reports/daily/cea/exe_summary-04.pdf',function(req,res){res.sendFile(__dirname + '/public/reports/daily/cea/exe_summary-04.pdf');});
-app.get('/home.html',function(req,res){res.sendFile(__dirname + '/public/home.html');});
-app.get('/viewbh.html',function(req,res){res.sendFile(__dirname + '/public/viewbh.html');});
-app.get('/lib/p5.min.js',function(req,res){res.sendFile(__dirname + '/public/lib/p5.min.js');});
-app.get('/lib/addons/p5.dom.min.js',function(req,res){res.sendFile(__dirname + '/public/lib/addons/p5.dom.min.js');});
-app.get('/lib/addons/p5.sound.min.js',function(req,res){res.sendFile(__dirname + '/public/lib/addons/p5.sound.min.js');});
-app.get('/sk.js',function(req,res){res.sendFile(__dirname + '/public/sk.js');});
-app.get('/skchart.js',function(req,res){res.sendFile(__dirname + '/public/skchart.js');});
-app.get('/iith/iithhome.html',function(req,res){ res.sendFile(__dirname + '/public/iith/iithhome.html');});
-app.get('/iith/realtime',function(req,res){res.sendFile(__dirname + '/public/iith/real.html');});
+// app.get('/',function(req,res){res.sendFile(__dirname + '/public/home.html');});
+// app.get('/reports/daily/cea/exe_summary-04.pdf',function(req,res){res.sendFile(__dirname + '/public/reports/daily/cea/exe_summary-04.pdf');});
+// app.get('/home.html',function(req,res){res.sendFile(__dirname + '/public/home.html');});
+// app.get('/viewbh.html',function(req,res){res.sendFile(__dirname + '/public/viewbh.html');});
+// app.get('/lib/p5.min.js',function(req,res){res.sendFile(__dirname + '/public/lib/p5.min.js');});
+// app.get('/lib/addons/p5.dom.min.js',function(req,res){res.sendFile(__dirname + '/public/lib/addons/p5.dom.min.js');});
+// app.get('/lib/addons/p5.sound.min.js',function(req,res){res.sendFile(__dirname + '/public/lib/addons/p5.sound.min.js');});
+// app.get('/sk.js',function(req,res){res.sendFile(__dirname + '/public/sk.js');});
+// app.get('/skchart.js',function(req,res){res.sendFile(__dirname + '/public/skchart.js');});
+// app.get('/iith/iithhome.html',function(req,res){ res.sendFile(__dirname + '/public/iith/iithhome.html');});
+// app.get('/iith/realtime',function(req,res){res.sendFile(__dirname + '/public/iith/real.html');});
 
-app.get('/iith/iithoverview.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithoverview.html');});
-app.get('/iith/iithmicrogrid.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithmicrogrid.html');});
-app.get('/iith/iithhistory.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithhistory.html');});
-app.get('/iith/iithcasestudies.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithcasestudies.html');});
-app.get('/iith/iithkeyinfo.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithkeyinfo.html');});
-
-
-app.get('/iith/iithoverview-image.jpg',function(req,res){res.sendFile(__dirname + '/public/img/iithoverview-image.jpg');});
-app.get('/iith/iith-hv-grid.png',function(req,res){res.sendFile(__dirname + '/public/img/iith-hv-grid.png');});
-app.get('/iith/iithaprmay.png',function(req,res){res.sendFile(__dirname + '/public/img/iithcase/iithaprmay.png');});
-app.get('/iith/iith-apr-loadcurve.png',function(req,res){res.sendFile(__dirname + '/public/img/iithcase/iith-apr-loadcurve.png');});
-app.get('/iith/bh.png',function(req,res){res.sendFile(__dirname + '/public/img/iithcase/bh.png');});
-app.get('/iith/gh.png',function(req,res){res.sendFile(__dirname + '/public/img/iithcase/gh.png');});
-app.get('/iith/fh.png',function(req,res){res.sendFile(__dirname + '/public/img/iithcase/fh.png');});
-app.get('/iith/pv.png',function(req,res){res.sendFile(__dirname + '/public/img/iithcase/pv.png');});
+// app.get('/iith/iithoverview.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithoverview.html');});
+// app.get('/iith/iithmicrogrid.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithmicrogrid.html');});
+// app.get('/iith/iithhistory.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithhistory.html');});
+// app.get('/iith/iithcasestudies.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithcasestudies.html');});
+// app.get('/iith/iithkeyinfo.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithkeyinfo.html');});
 
 
-app.get('/vvit/vvitoverview.html',function(req,res){res.sendFile(__dirname + '/public/vvit/vvitoverview.html');});
-app.get('/vvit/vvitmicrogrid.html',function(req,res){res.sendFile(__dirname + '/public/vvit/vvitmicrogrid.html');});
-app.get('/iith/iithhistory.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithhistory.html');});
-app.get('/iith/iithcasestudies.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithcasestudies.html');});
-app.get('/vvit/vvitkeyinfo.html',function(req,res){res.sendFile(__dirname + '/public/vvit/vvitkeyinfo.html');});
-
-app.get('/vvit/vvitmeterdata2.html',function(req,res){
-  //vvit_meterID = req.params.mid;
-  res.sendFile(__dirname + '/public/vvit/vvitmeterdata2.html');
-  //vvit_run_query(vvit_meterID);
-  setTimeout(function(){vvit_run_query(vvit_meterID);}, 1000);
-});
+// app.get('/iith/iithoverview-image.jpg',function(req,res){res.sendFile(__dirname + '/public/img/iithoverview-image.jpg');});
+// app.get('/iith/iith-hv-grid.png',function(req,res){res.sendFile(__dirname + '/public/img/iith-hv-grid.png');});
+// app.get('/iith/iithaprmay.png',function(req,res){res.sendFile(__dirname + '/public/img/iithcase/iithaprmay.png');});
+// app.get('/iith/iith-apr-loadcurve.png',function(req,res){res.sendFile(__dirname + '/public/img/iithcase/iith-apr-loadcurve.png');});
+// app.get('/iith/bh.png',function(req,res){res.sendFile(__dirname + '/public/img/iithcase/bh.png');});
+// app.get('/iith/gh.png',function(req,res){res.sendFile(__dirname + '/public/img/iithcase/gh.png');});
+// app.get('/iith/fh.png',function(req,res){res.sendFile(__dirname + '/public/img/iithcase/fh.png');});
+// app.get('/iith/pv.png',function(req,res){res.sendFile(__dirname + '/public/img/iithcase/pv.png');});
 
 
-// ******************************************************************************************
-//          G N I T S - pages
-// ******************************************************************************************
-app.get('/gnits/gnits.png',function(req,res){res.sendFile(__dirname + '/public/img/gnits.png');});
-app.get('/gnits/gnitsmicrogird.png',function(req,res){res.sendFile(__dirname + '/public/img/gnitsmicrogird.png');});
-app.get('/gnits/gnitsoverview.html',function(req,res){res.sendFile(__dirname + '/public/gnits/gnitsoverview.html');});
-app.get('/gnits/gnitsmicrogrid.html',function(req,res){res.sendFile(__dirname + '/public/gnits/gnitsmicrogrid.html');});
-app.get('/gnits/gnitshist.html',function(req,res){res.sendFile(__dirname + '/public/gnits/gnitshist.html');});
-app.get('/gnits/gnitscasestudies.html',function(req,res){res.sendFile(__dirname + '/public/gnits/gnitscasestudies.html');});
-app.get('/gnits/gnitskeyinfo.html',function(req,res){res.sendFile(__dirname + '/public/gnits/gnitskeyinfo.html');});
-app.get('/gnits/gnitsmeterdata2.html',function(req,res){
-  //vvit_meterID = req.params.mid;
-  res.sendFile(__dirname + '/public/gnits/gnitsmeterdata2.html');
-  //vvit_run_query(vvit_meterID);
-  //gnits_run_query();
-  setTimeout(function(){gnits_run_query();}, 1000);
-});
+// app.get('/vvit/vvitoverview.html',function(req,res){res.sendFile(__dirname + '/public/vvit/vvitoverview.html');});
+// app.get('/vvit/vvitmicrogrid.html',function(req,res){res.sendFile(__dirname + '/public/vvit/vvitmicrogrid.html');});
+// app.get('/iith/iithhistory.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithhistory.html');});
+// app.get('/iith/iithcasestudies.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithcasestudies.html');});
+// app.get('/vvit/vvitkeyinfo.html',function(req,res){res.sendFile(__dirname + '/public/vvit/vvitkeyinfo.html');});
+
+// app.get('/vvit/vvitmeterdata2.html',function(req,res){
+//   //vvit_meterID = req.params.mid;
+//   res.sendFile(__dirname + '/public/vvit/vvitmeterdata2.html');
+//   //vvit_run_query(vvit_meterID);
+//   setTimeout(function(){vvit_run_query(vvit_meterID);}, 1000);
+// });
 
 
-
-app.get('/gnits/gnitspeak.html',function(req,res){
-  //vvit_meterID = req.params.mid;
-  res.sendFile(__dirname + '/public/gnits/gnitspeak.html');
-  //vvit_run_query(vvit_meterID);
-  //gnits_run_query();
-  setTimeout(function(){gnits_run_query_peak();}, 1000);
-});
+// // ******************************************************************************************
+// //          G N I T S - pages
+// // ******************************************************************************************
+// app.get('/gnits/gnits.png',function(req,res){res.sendFile(__dirname + '/public/img/gnits.png');});
+// app.get('/gnits/gnitsmicrogird.png',function(req,res){res.sendFile(__dirname + '/public/img/gnitsmicrogird.png');});
+// app.get('/gnits/gnitsoverview.html',function(req,res){res.sendFile(__dirname + '/public/gnits/gnitsoverview.html');});
+// app.get('/gnits/gnitsmicrogrid.html',function(req,res){res.sendFile(__dirname + '/public/gnits/gnitsmicrogrid.html');});
+// app.get('/gnits/gnitshist.html',function(req,res){res.sendFile(__dirname + '/public/gnits/gnitshist.html');});
+// app.get('/gnits/gnitscasestudies.html',function(req,res){res.sendFile(__dirname + '/public/gnits/gnitscasestudies.html');});
+// app.get('/gnits/gnitskeyinfo.html',function(req,res){res.sendFile(__dirname + '/public/gnits/gnitskeyinfo.html');});
+// app.get('/gnits/gnitsmeterdata2.html',function(req,res){
+//   //vvit_meterID = req.params.mid;
+//   res.sendFile(__dirname + '/public/gnits/gnitsmeterdata2.html');
+//   //vvit_run_query(vvit_meterID);
+//   //gnits_run_query();
+//   setTimeout(function(){gnits_run_query();}, 1000);
+// });
 
 
 
-
-
-// ******************************************************************************************
-//          PVPSIT - pages
-// ******************************************************************************************
-app.get('/pvpsit/pvpsit.jpg',function(req,res){res.sendFile(__dirname + '/public/img/pvpsit.jpg');});
-
-app.get('/pvpsit/pvpsitoverview.html',function(req,res){res.sendFile(__dirname + '/public/pvpsit/pvpsitoverview.html');});
-app.get('/pvpsit/pvpsitmicrogrid.html',function(req,res){res.sendFile(__dirname + '/public/pvpsit/pvpsitmicrogrid.html');});
-app.get('/pvpsit/pvpsithist.html',function(req,res){res.sendFile(__dirname + '/public/pvpsit/pvpsithist.html');});
-app.get('/pvpsit/pvpsitcasestudies.html',function(req,res){res.sendFile(__dirname + '/public/pvpsit/pvpsitcasestudies.html');});
-app.get('/pvpsit/pvpsitkeyinfo.html',function(req,res){res.sendFile(__dirname + '/public/pvpsit/pvpsitkeyinfo.html');});
-
-app.get('/pvpsit/pvpsitmeterdata2.html',function(req,res){
-  //vvit_meterID = req.params.mid;
-  res.sendFile(__dirname + '/public/pvpsit/pvpsitmeterdata2.html');
-  //vvit_run_query(vvit_meterID);
-  //gnits_run_query();
-  setTimeout(function(){pvpsit_run_query();}, 1000);
-});
-
-app.get('/pvpsit/pvpsitpeak.html',function(req,res){
-  //vvit_meterID = req.params.mid;
-  res.sendFile(__dirname + '/public/pvpsit/pvpsitpeak.html');
-  //vvit_run_query(vvit_meterID);
-  //gnits_run_query();
-  setTimeout(function(){pvpsit_run_query_peak();}, 1000);
-});
-
-// ******************************************************************************************
-//          Demo - pages
-// ******************************************************************************************
-app.get('/demo/bvrith.png',function(req,res){res.sendFile(__dirname + '/public/img/bvrith.png');});
-
-app.get('/demo/demooverview.html',function(req,res){res.sendFile(__dirname + '/public/demo/demooverview.html');});
-app.get('/demo/demomicrogrid.html',function(req,res){res.sendFile(__dirname + '/public/demo/demomicrogrid.html');});
-app.get('/demo/demohist.html',function(req,res){res.sendFile(__dirname + '/public/demo/demohist.html');});
-app.get('/demo/democasestudies.html',function(req,res){res.sendFile(__dirname + '/public/demo/democasestudies.html');});
-app.get('/demo/demokeyinfo.html',function(req,res){res.sendFile(__dirname + '/public/demo/demokeyinfo.html');});
-
-app.get('/demo/demometerdata2.html',function(req,res){
-  //vvit_meterID = req.params.mid;
-  res.sendFile(__dirname + '/public/demo/demometerdata2.html');
-  //vvit_run_query(vvit_meterID);
-  //gnits_run_query();
-  setTimeout(function(){demo_run_query();}, 1000);
-});
-
-
-
-app.get('/demo/demopeak.html',function(req,res){
-  //vvit_meterID = req.params.mid;
-  res.sendFile(__dirname + '/public/demo/demopeak.html');
-  //vvit_run_query(vvit_meterID);
-  //gnits_run_query();
-  setTimeout(function(){demo_run_query_peak();}, 1000);
-});
-
-// ******************************************************************************************
-//          OUCE - pages
-// ******************************************************************************************
-app.get('/ouce/ouce.png',function(req,res){res.sendFile(__dirname + '/public/img/ouce.png');});
-app.get('/ouce/oucemicrogird.png',function(req,res){res.sendFile(__dirname + '/public/img/oucemicrogird.png');});
-
-app.get('/ouce/ouceoverview.html',function(req,res){res.sendFile(__dirname + '/public/ouce/ouceoverview.html');});
-app.get('/ouce/oucemicrogrid.html',function(req,res){res.sendFile(__dirname + '/public/ouce/oucemicrogrid.html');});
-app.get('/ouce/oucehist.html',function(req,res){res.sendFile(__dirname + '/public/ouce/oucehist.html');});
-app.get('/ouce/oucecasestudies.html',function(req,res){res.sendFile(__dirname + '/public/ouce/oucecasestudies.html');});
-app.get('/ouce/oucekeyinfo.html',function(req,res){res.sendFile(__dirname + '/public/ouce/oucekeyinfo.html');});
-
-
-app.get('/ouce/oucemeterdata2.html',function(req,res){
-  //vvit_meterID = req.params.mid;
-  res.sendFile(__dirname + '/public/ouce/oucemeterdata2.html');
-  //vvit_run_query(vvit_meterID);
-  //ouce_run_query();
-  setTimeout(function(){ouce_run_query();}, 1000);
-});
+// app.get('/gnits/gnitspeak.html',function(req,res){
+//   //vvit_meterID = req.params.mid;
+//   res.sendFile(__dirname + '/public/gnits/gnitspeak.html');
+//   //vvit_run_query(vvit_meterID);
+//   //gnits_run_query();
+//   setTimeout(function(){gnits_run_query_peak();}, 1000);
+// });
 
 
 
 
-app.get('/demo/demobvrithmeterdata2.html',function(req,res){
-  //vvit_meterID = req.params.mid;
-  res.sendFile(__dirname + '/public/demo/demobvrithmeterdata2.html');
-  //vvit_run_query(vvit_meterID);
-  //gnits_run_query();
-  setTimeout(function(){demo_bvrith_run_query();}, 1000);
-});
 
-app.get('/vvit/vvitoverview-image.png',function(req,res){res.sendFile(__dirname + '/public/img/vvitoverview-image.png');});
-app.get('/vvit/VIVA.png',function(req,res){res.sendFile(__dirname + '/public/img/VIVA.png');});
-app.get('/vvit/grid.png',function(req,res){res.sendFile(__dirname + '/public/img/grid.png');});
+// // ******************************************************************************************
+// //          PVPSIT - pages
+// // ******************************************************************************************
+// app.get('/pvpsit/pvpsit.jpg',function(req,res){res.sendFile(__dirname + '/public/img/pvpsit.jpg');});
+
+// app.get('/pvpsit/pvpsitoverview.html',function(req,res){res.sendFile(__dirname + '/public/pvpsit/pvpsitoverview.html');});
+// app.get('/pvpsit/pvpsitmicrogrid.html',function(req,res){res.sendFile(__dirname + '/public/pvpsit/pvpsitmicrogrid.html');});
+// app.get('/pvpsit/pvpsithist.html',function(req,res){res.sendFile(__dirname + '/public/pvpsit/pvpsithist.html');});
+// app.get('/pvpsit/pvpsitcasestudies.html',function(req,res){res.sendFile(__dirname + '/public/pvpsit/pvpsitcasestudies.html');});
+// app.get('/pvpsit/pvpsitkeyinfo.html',function(req,res){res.sendFile(__dirname + '/public/pvpsit/pvpsitkeyinfo.html');});
+
+// app.get('/pvpsit/pvpsitmeterdata2.html',function(req,res){
+//   //vvit_meterID = req.params.mid;
+//   res.sendFile(__dirname + '/public/pvpsit/pvpsitmeterdata2.html');
+//   //vvit_run_query(vvit_meterID);
+//   //gnits_run_query();
+//   setTimeout(function(){pvpsit_run_query();}, 1000);
+// });
+
+// app.get('/pvpsit/pvpsitpeak.html',function(req,res){
+//   //vvit_meterID = req.params.mid;
+//   res.sendFile(__dirname + '/public/pvpsit/pvpsitpeak.html');
+//   //vvit_run_query(vvit_meterID);
+//   //gnits_run_query();
+//   setTimeout(function(){pvpsit_run_query_peak();}, 1000);
+// });
+
+// // ******************************************************************************************
+// //          Demo - pages
+// // ******************************************************************************************
+// app.get('/demo/bvrith.png',function(req,res){res.sendFile(__dirname + '/public/img/bvrith.png');});
+
+// app.get('/demo/demooverview.html',function(req,res){res.sendFile(__dirname + '/public/demo/demooverview.html');});
+// app.get('/demo/demomicrogrid.html',function(req,res){res.sendFile(__dirname + '/public/demo/demomicrogrid.html');});
+// app.get('/demo/demohist.html',function(req,res){res.sendFile(__dirname + '/public/demo/demohist.html');});
+// app.get('/demo/democasestudies.html',function(req,res){res.sendFile(__dirname + '/public/demo/democasestudies.html');});
+// app.get('/demo/demokeyinfo.html',function(req,res){res.sendFile(__dirname + '/public/demo/demokeyinfo.html');});
+
+// app.get('/demo/demometerdata2.html',function(req,res){
+//   //vvit_meterID = req.params.mid;
+//   res.sendFile(__dirname + '/public/demo/demometerdata2.html');
+//   //vvit_run_query(vvit_meterID);
+//   //gnits_run_query();
+//   setTimeout(function(){demo_run_query();}, 1000);
+// });
+
+
+
+// app.get('/demo/demopeak.html',function(req,res){
+//   //vvit_meterID = req.params.mid;
+//   res.sendFile(__dirname + '/public/demo/demopeak.html');
+//   //vvit_run_query(vvit_meterID);
+//   //gnits_run_query();
+//   setTimeout(function(){demo_run_query_peak();}, 1000);
+// });
+
+// // ******************************************************************************************
+// //          OUCE - pages
+// // ******************************************************************************************
+// app.get('/ouce/ouce.png',function(req,res){res.sendFile(__dirname + '/public/img/ouce.png');});
+// app.get('/ouce/oucemicrogird.png',function(req,res){res.sendFile(__dirname + '/public/img/oucemicrogird.png');});
+
+// app.get('/ouce/ouceoverview.html',function(req,res){res.sendFile(__dirname + '/public/ouce/ouceoverview.html');});
+// app.get('/ouce/oucemicrogrid.html',function(req,res){res.sendFile(__dirname + '/public/ouce/oucemicrogrid.html');});
+// app.get('/ouce/oucehist.html',function(req,res){res.sendFile(__dirname + '/public/ouce/oucehist.html');});
+// app.get('/ouce/oucecasestudies.html',function(req,res){res.sendFile(__dirname + '/public/ouce/oucecasestudies.html');});
+// app.get('/ouce/oucekeyinfo.html',function(req,res){res.sendFile(__dirname + '/public/ouce/oucekeyinfo.html');});
+
+
+// app.get('/ouce/oucemeterdata2.html',function(req,res){
+//   //vvit_meterID = req.params.mid;
+//   res.sendFile(__dirname + '/public/ouce/oucemeterdata2.html');
+//   //vvit_run_query(vvit_meterID);
+//   //ouce_run_query();
+//   setTimeout(function(){ouce_run_query();}, 1000);
+// });
 
 
 
 
-app.get('/iith/iithhist.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithhist.html');});
+// app.get('/demo/demobvrithmeterdata2.html',function(req,res){
+//   //vvit_meterID = req.params.mid;
+//   res.sendFile(__dirname + '/public/demo/demobvrithmeterdata2.html');
+//   //vvit_run_query(vvit_meterID);
+//   //gnits_run_query();
+//   setTimeout(function(){demo_bvrith_run_query();}, 1000);
+// });
 
-app.get('/iith.png',function(req,res){
-  res.sendFile(__dirname + '/public/img/iith.png');
-});
+// app.get('/vvit/vvitoverview-image.png',function(req,res){res.sendFile(__dirname + '/public/img/vvitoverview-image.png');});
+// app.get('/vvit/VIVA.png',function(req,res){res.sendFile(__dirname + '/public/img/VIVA.png');});
+// app.get('/vvit/grid.png',function(req,res){res.sendFile(__dirname + '/public/img/grid.png');});
 
-app.get('/iith/iith.png',function(req,res){
-  res.sendFile(__dirname + '/public/img/iith.png');
-});
 
-app.get('/vvit.png',function(req,res){
-  res.sendFile(__dirname + '/public/img/vvit.png');
-});
 
-app.get('/your.png',function(req,res){
-  res.sendFile(__dirname + '/public/img/your.png');
-});
 
-app.get('/ouce.png',function(req,res){
-  res.sendFile(__dirname + '/public/img/ouce.png');
-});
+// app.get('/iith/iithhist.html',function(req,res){res.sendFile(__dirname + '/public/iith/iithhist.html');});
 
-app.get('/other.png',function(req,res){
-  res.sendFile(__dirname + '/public/img/other.png');
-});
+// app.get('/iith.png',function(req,res){
+//   res.sendFile(__dirname + '/public/img/iith.png');
+// });
+
+// app.get('/iith/iith.png',function(req,res){
+//   res.sendFile(__dirname + '/public/img/iith.png');
+// });
+
+// app.get('/vvit.png',function(req,res){
+//   res.sendFile(__dirname + '/public/img/vvit.png');
+// });
+
+// app.get('/your.png',function(req,res){
+//   res.sendFile(__dirname + '/public/img/your.png');
+// });
+
+// app.get('/ouce.png',function(req,res){
+//   res.sendFile(__dirname + '/public/img/ouce.png');
+// });
+
+// app.get('/other.png',function(req,res){
+//   res.sendFile(__dirname + '/public/img/other.png');
+// });
 
 app.get('/ablockmeterdata.html:mid',function(req,res){
   meterID = req.params.mid;
@@ -255,86 +255,86 @@ console.log("node server is up and running. visit localhost:2048 in your favouri
 
 var vvit_meterID='2';
 
-var vvit_con = mysql.createConnection({
-  host: "127.0.0.1",
-  port: "3306",
-  user: "bms",
-  password: "Sglab_1234",
-  database: "VVIT",
-  socketPath: '/var/run/mysqld/mysqld.sock'
-});
+// var vvit_con = mysql.createConnection({
+//   host: "127.0.0.1",
+//   port: "3306",
+//   user: "bms",
+//   password: "Sglab_1234",
+//   database: "VVIT",
+//   socketPath: '/var/run/mysqld/mysqld.sock'
+// });
 
 
 
-var ouce_con = mysql.createConnection({
-  host: "127.0.0.1",
-  port: "3306",
-  user: "bms",
-  password: "Sglab_1234",
-  database: "OUCE",
-  socketPath: '/var/run/mysqld/mysqld.sock'
-});
+// var ouce_con = mysql.createConnection({
+//   host: "127.0.0.1",
+//   port: "3306",
+//   user: "bms",
+//   password: "Sglab_1234",
+//   database: "OUCE",
+//   socketPath: '/var/run/mysqld/mysqld.sock'
+// });
 
-var gnits_con = mysql.createConnection({
-  host: "127.0.0.1",
-  port: "3306",
-  user: "bms",
-  password: "Sglab_1234",
-  database: "GNITS",
-  socketPath: '/var/run/mysqld/mysqld.sock'
-});
+// var gnits_con = mysql.createConnection({
+//   host: "127.0.0.1",
+//   port: "3306",
+//   user: "bms",
+//   password: "Sglab_1234",
+//   database: "GNITS",
+//   socketPath: '/var/run/mysqld/mysqld.sock'
+// });
 
-var pvpsit_con = mysql.createConnection({
-  host: "127.0.0.1",
-  port: "3306",
-  user: "bms",
-  password: "Sglab_1234",
-  database: "PVPSIT",
-  socketPath: '/var/run/mysqld/mysqld.sock'
-});
+// var pvpsit_con = mysql.createConnection({
+//   host: "127.0.0.1",
+//   port: "3306",
+//   user: "bms",
+//   password: "Sglab_1234",
+//   database: "PVPSIT",
+//   socketPath: '/var/run/mysqld/mysqld.sock'
+// });
 
-var demo_con = mysql.createConnection({
-  host: "127.0.0.1",
-  port: "3306",
-  user: "bms",
-  password: "Sglab_1234",
-  database: "demo",
-  socketPath: '/var/run/mysqld/mysqld.sock'
-});
+// var demo_con = mysql.createConnection({
+//   host: "127.0.0.1",
+//   port: "3306",
+//   user: "bms",
+//   password: "Sglab_1234",
+//   database: "demo",
+//   socketPath: '/var/run/mysqld/mysqld.sock'
+// });
 
-var demo_bvrith_con=mysql.createConnection({
-  host: "127.0.0.1",
-  port: "3306",
-  user: "bms",
-  password: "Sglab_1234",
-  database: "BVRITH",
-  socketPath: '/var/run/mysqld/mysqld.sock'
-});
+// var demo_bvrith_con=mysql.createConnection({
+//   host: "127.0.0.1",
+//   port: "3306",
+//   user: "bms",
+//   password: "Sglab_1234",
+//   database: "BVRITH",
+//   socketPath: '/var/run/mysqld/mysqld.sock'
+// });
 
-var con = mysql.createConnection({
-  host: "127.0.0.1",
-  port: "10001",
-  user: "root",
-  password: "Sglab1",
-  database: "iith_ems"
-});
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Mysql connection opened with IITH database!");
-});
+// var con = mysql.createConnection({
+//   host: "127.0.0.1",
+//   port: "10001",
+//   user: "root",
+//   password: "Sglab1",
+//   database: "iith_ems"
+// });
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Mysql connection opened with IITH database!");
+// });
 
-var vvit_con = mysql.createConnection({
-  host: "127.0.0.1",
-  port: "3306",
-  user: "bms",
-  password: "Sglab_1234",
-  database: "VVIT",
-  socketPath: '/var/run/mysqld/mysqld.sock'
-});
-vvit_con.connect(function(err) {
-  if (err) throw err;
-  console.log("Mysql connection opened with VVIT database on IITH server!");
-});
+// var vvit_con = mysql.createConnection({
+//   host: "127.0.0.1",
+//   port: "3306",
+//   user: "bms",
+//   password: "Sglab_1234",
+//   database: "VVIT",
+//   socketPath: '/var/run/mysqld/mysqld.sock'
+// });
+// vvit_con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Mysql connection opened with VVIT database on IITH server!");
+// });
 
 var reg_dict = {IIT_A_Emergency_Panel_11_13: 'r1',
                 IIT_A_Emergency_Panel_11_14: 'r2',
@@ -491,17 +491,17 @@ socket.on('request_history',function(data){
 socket.on('client_tstamp', function(data){
 //console.log(data);
 
-var con_bh = mysql.createConnection({
-  host: "127.0.0.1",
-  port: "3306",
-  user: "bms",
-  password: "Sglab_1234",
-  database: "IITH_SS_data"
-});
-con_bh.connect(function(err) {
-  if (err) throw err;
-  console.log("Mysql connection opened with SS database!");
-});
+// var con_bh = mysql.createConnection({
+//   host: "127.0.0.1",
+//   port: "3306",
+//   user: "bms",
+//   password: "Sglab_1234",
+//   database: "IITH_SS_data"
+// });
+// con_bh.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Mysql connection opened with SS database!");
+// });
 
 
 console.log('server will connect to database of boys hostel');
