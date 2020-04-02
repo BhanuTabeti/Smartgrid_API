@@ -78,4 +78,4 @@ pool.bh_con = mysql.createPool({
 	database: process.env.IITH_SS_DB
 });
 
-module.exports = pool
+module.exports = pool;
