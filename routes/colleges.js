@@ -13,9 +13,9 @@ var router = express.Router();
 router.get('/vvit', getVVITdata);
 router.get('/ouce', getOUCEdata);
 router.get('/gnit', getGNITdata);
-router.get('/gnit/peak', getGNITdataPeak);
+router.get('/gnit_peak', getGNITdataPeak);
 router.get('/pvpsit', getPVPSITdata);
-router.get('/pvpsit/peak', getPVPSITdataPeak);
+router.get('/pvpsit_peak', getPVPSITdataPeak);
 router.get('/bvrith', getBvrithData);
 router.get('/demo', getDemoData);
 

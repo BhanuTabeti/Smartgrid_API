@@ -9,9 +9,6 @@ var meterID='16';
 var vvit_meterID='2';
 
 server.listen(2048);
-
-app.use(express.static(path.join(__dirname, 'public')))
-
 // app.get('/',function(req,res){res.sendFile(__dirname + '/public/home.html');});
 // app.get('/reports/daily/cea/exe_summary-04.pdf',function(req,res){res.sendFile(__dirname + '/public/reports/daily/cea/exe_summary-04.pdf');});
 // app.get('/home.html',function(req,res){res.sendFile(__dirname + '/public/home.html');});
@@ -55,10 +52,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 // });
 
 
-// ******************************************************************************************
-//          G N I T S - pages
-// ******************************************************************************************
-
+// // ******************************************************************************************
+// //          G N I T S - pages
+// // ******************************************************************************************
 // app.get('/gnits/gnits.png',function(req,res){res.sendFile(__dirname + '/public/img/gnits.png');});
 // app.get('/gnits/gnitsmicrogird.png',function(req,res){res.sendFile(__dirname + '/public/img/gnitsmicrogird.png');});
 // app.get('/gnits/gnitsoverview.html',function(req,res){res.sendFile(__dirname + '/public/gnits/gnitsoverview.html');});
@@ -88,10 +84,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 
-// ******************************************************************************************
-//          PVPSIT - pages
-// ******************************************************************************************
-
+// // ******************************************************************************************
+// //          PVPSIT - pages
+// // ******************************************************************************************
 // app.get('/pvpsit/pvpsit.jpg',function(req,res){res.sendFile(__dirname + '/public/img/pvpsit.jpg');});
 
 // app.get('/pvpsit/pvpsitoverview.html',function(req,res){res.sendFile(__dirname + '/public/pvpsit/pvpsitoverview.html');});
@@ -474,16 +469,17 @@ io.sockets.on('connection', function(socket){
  });
 
 
+// PORTED
 // socket.on('request_history',function(data){
 //   //console.log('server received : '+data);
 //   if (data == 'atot') {
-//     console.log('received query for A block total');
-//     var a_query = 'SELECT * FROM `block_totals` order by tstamp desc limit 120';
-//     con.query(a_query, function (err, result, fields) {
+//    console.log('received query for A block total');
+//    var a_query = 'SELECT * FROM `block_totals` order by tstamp desc limit 120';
+//    con.query(a_query, function (err, result, fields) {
 //     if (err) throw err;
 //     A_history_result = result;
-//   io.sockets.emit('a_block_history', A_history_result);
-//   console.log('server sending A block historical data');
+//  io.sockets.emit('a_block_history', A_history_result);
+//  console.log('server sending A block historical data');
 //     });
 
 //   }
@@ -496,17 +492,17 @@ io.sockets.on('connection', function(socket){
 // socket.on('client_tstamp', function(data){
 // //console.log(data);
 
-// var con_bh = mysql.createConnection({
-//   host: "127.0.0.1",
-//   port: "3306",
-//   user: "bms",
-//   password: "Sglab_1234",
-//   database: "IITH_SS_data"
-// });
-// con_bh.connect(function(err) {
-//   if (err) throw err;
-//   console.log("Mysql connection opened with SS database!");
-// });
+// // var con_bh = mysql.createConnection({
+// //   host: "127.0.0.1",
+// //   port: "3306",
+// //   user: "bms",
+// //   password: "Sglab_1234",
+// //   database: "IITH_SS_data"
+// // });
+// // con_bh.connect(function(err) {
+// //   if (err) throw err;
+// //   console.log("Mysql connection opened with SS database!");
+// // });
 
 
 // console.log('server will connect to database of boys hostel');
@@ -521,7 +517,6 @@ io.sockets.on('connection', function(socket){
 
 
 // });
-
 
 
 });
@@ -563,66 +558,74 @@ io.sockets.on('connection', function(socket){
  //   }
 
 
- //  function vvit_run_query(vvit_meterID) {
+// function vvit_run_query(vvit_meterID) {
 
- //  vvit_con.query("SELECT * FROM `vvit_data` WHERE `tstamp` IN ( SELECT MAX(`tstamp`) FROM vvit_data GROUP BY `meter_ID` ) order by `meter_ID`",
- //  function (err, result, fields) {
- //   if (err) throw err;
- //   vvit_meter_result = result;
- //   //console.log(meter_result);
- //   //io.sockets.emit('vvit_meter_data', meter_result);
- //  // console.log(vvit_last_socket);
- //   io.sockets.emit('vvit_meter_data', vvit_meter_result);
- //   console.log(vvit_meter_result);
- //   });
- //  }
-
-
-
- //    function ouce_run_query() {
-
- //    ouce_con.query("SELECT * FROM `ou_data` WHERE `tstamp` IN ( SELECT MAX(`tstamp`) FROM ou_data GROUP BY `meter_ID` ) order by `meter_ID`",
- //    function (err, result, fields) {
- //     if (err) throw err;
- //     ouce_meter_result = result;
- //     //console.log(meter_result);
- //     //io.sockets.emit('vvit_meter_data', meter_result);
- //    // console.log(vvit_last_socket);
- //     io.sockets.emit('ouce_meter_data', ouce_meter_result);
- //     console.log(ouce_meter_result);
- //     });
- //    }
+// vvit_con.query("SELECT * FROM `vvit_data` WHERE `tstamp` IN ( SELECT MAX(`tstamp`) FROM vvit_data GROUP BY `meter_ID` ) order by `meter_ID`",
+// function (err, result, fields) {
+//  if (err) throw err;
+//  vvit_meter_result = result;
+//  //console.log(meter_result);
+//  //io.sockets.emit('vvit_meter_data', meter_result);
+// // console.log(vvit_last_socket);
+//  io.sockets.emit('vvit_meter_data', vvit_meter_result);
+//  console.log(vvit_meter_result);
+//  });
+// }
 
 
+
+// function ouce_run_query() {
+
+// ouce_con.query("SELECT * FROM `ou_data` WHERE `tstamp` IN ( SELECT MAX(`tstamp`) FROM ou_data GROUP BY `meter_ID` ) order by `meter_ID`",
+// function (err, result, fields) {
+//  if (err) throw err;
+//  ouce_meter_result = result;
+//  //console.log(meter_result);
+//  //io.sockets.emit('vvit_meter_data', meter_result);
+// // console.log(vvit_last_socket);
+//  io.sockets.emit('ouce_meter_data', ouce_meter_result);
+//  console.log(ouce_meter_result);
+//  });
+// }
 
 
 
 
-//   function gnits_run_query() {
-//     gnits_con.query("SELECT * FROM `gnits_data` WHERE `tstamp` IN ( SELECT MAX(`tstamp`) FROM gnits_data GROUP BY `meter_ID` ) order by `meter_ID`",
-//     function (err, result, fields) {
-//      if (err) throw err;
-//      gnits_meter_result = result;
-//      //console.log(meter_result);
-//     //io.sockets.emit('vvit_meter_data', meter_result);
-//     //console.log(vvit_last_socket);
-//      io.sockets.emit('gnits_meter_data', gnits_meter_result);
-//      //console.log(gnits_meter_result);
-//    });
-//   }
 
 
-//   function gnits_run_query_peak() {
-//     mids=['2','3','4','5','6','7','8','9','10','11','12'];
-//     var i;
-//     for (i = 0; i < mids.length; i++) {
-//       gnits_con.query("SELECT `tstamp`, `meter_ID`, `Ptot` FROM `gnits_data` WHERE `Ptot` =( SELECT MAX(`Ptot`) FROM `gnits_data` WHERE DATE(`tstamp`) = CURDATE()-1 AND `meter_ID` = "+mids[i]+" ) AND DATE(`tstamp`) = CURDATE()-1 AND `meter_ID` = "+mids[i],
-//        function (err, result, fields) {
-//           if (err) throw err;
-//           io.sockets.emit('gnits_peak_meter_data', result);
+// function gnits_run_query() {
+//   gnits_con.query("SELECT * FROM `gnits_data` WHERE `tstamp` IN ( SELECT MAX(`tstamp`) FROM gnits_data GROUP BY `meter_ID` ) order by `meter_ID`",
+//   function (err, result, fields) {
+//    if (err) throw err;
+//    gnits_meter_result = result;
+//    //console.log(meter_result);
+//   //io.sockets.emit('vvit_meter_data', meter_result);
+//   //console.log(vvit_last_socket);
+//    io.sockets.emit('gnits_meter_data', gnits_meter_result);
+//    //console.log(gnits_meter_result);
+//  });
+// }
 
-//     });
-//   }
+
+
+
+
+
+
+
+
+
+// function gnits_run_query_peak() {
+//   mids=['2','3','4','5','6','7','8','9','10','11','12'];
+//   var i;
+//   for (i = 0; i < mids.length; i++) {
+//     gnits_con.query("SELECT `tstamp`, `meter_ID`, `Ptot` FROM `gnits_data` WHERE `Ptot` =( SELECT MAX(`Ptot`) FROM `gnits_data` WHERE DATE(`tstamp`) = CURDATE()-1 AND `meter_ID` = "+mids[i]+" ) AND DATE(`tstamp`) = CURDATE()-1 AND `meter_ID` = "+mids[i],
+//      function (err, result, fields) {
+//         if (err) throw err;
+//         io.sockets.emit('gnits_peak_meter_data', result);
+
+//   });
+// }
 // }
 
 
@@ -639,64 +642,64 @@ io.sockets.on('connection', function(socket){
 
 
 
-  // function pvpsit_run_query() {
-  //   pvpsit_con.query("SELECT * FROM `pvpsit_data` WHERE `tstamp` IN ( SELECT MAX(`tstamp`) FROM pvpsit_data GROUP BY `meter_ID` ) order by `meter_ID`",
-  //   function (err, result, fields) {
-  //    if (err) throw err;
-  //    pvpsit_meter_result = result;
-  //    //console.log(meter_result);
-  //   //io.sockets.emit('vvit_meter_data', meter_result);
-  //   //console.log(vvit_last_socket);
-  //    io.sockets.emit('pvpsit_meter_data', pvpsit_meter_result);
-  //    //console.log(gnits_meter_result);
-  //  });
-  // }
-
-  // function pvpsit_run_query_peak() {
-  //   pvpsit_con.query("SELECT `tstamp`,`meter_ID`, `Ptot` FROM `pvpsit_data` WHERE `Ptot` =( SELECT MAX(`Ptot`) FROM `pvpsit_data` WHERE DATE(`tstamp`) = '2019-11-05' ) and DATE(`tstamp`) = '2019-11-05'",
-  //   function (err, result, fields) {
-  //    if (err) throw err;
-  //    pvpsit_meter_result = result;
-  //    console.log(pvpsit_meter_result);
-  //   //io.sockets.emit('vvit_meter_data', meter_result);
-  //   //console.log(vvit_last_socket);
-  //    io.sockets.emit('pvpsit_peak_meter_data', pvpsit_meter_result);
-  //    //console.log(gnits_meter_result);
-  //  });
-  // }
+// function pvpsit_run_query() {
+//   pvpsit_con.query("SELECT * FROM `pvpsit_data` WHERE `tstamp` IN ( SELECT MAX(`tstamp`) FROM pvpsit_data GROUP BY `meter_ID` ) order by `meter_ID`",
+//   function (err, result, fields) {
+//    if (err) throw err;
+//    pvpsit_meter_result = result;
+//    //console.log(meter_result);
+//   //io.sockets.emit('vvit_meter_data', meter_result);
+//   //console.log(vvit_last_socket);
+//    io.sockets.emit('pvpsit_meter_data', pvpsit_meter_result);
+//    //console.log(gnits_meter_result);
+//  });
+// }
 
 
-    // function demo_run_query() {
-    //   demo_con.query("SELECT * FROM `meter_data` WHERE `tstamp` IN ( SELECT MAX(`tstamp`) FROM meter_data GROUP BY `meter_ID` ) order by `tstamp` DESC",
-    //   function (err, result, fields) {
-    //    if (err) throw err;
-    //    demo_meter_result = result;
-    //    //console.log(meter_result);
-    //   //io.sockets.emit('vvit_meter_data', meter_result);
-    //   //console.log(vvit_last_socket);
-    //    io.sockets.emit('demo_meter_data', demo_meter_result);
-    //    //console.log(gnits_meter_result);
-    //  });
-    // }
+
+// function demo_run_query() {
+//   demo_con.query("SELECT * FROM `meter_data` WHERE `tstamp` IN ( SELECT MAX(`tstamp`) FROM meter_data GROUP BY `meter_ID` ) order by `tstamp` DESC",
+//   function (err, result, fields) {
+//    if (err) throw err;
+//    demo_meter_result = result;
+//    //console.log(meter_result);
+//   //io.sockets.emit('vvit_meter_data', meter_result);
+//   //console.log(vvit_last_socket);
+//    io.sockets.emit('demo_meter_data', demo_meter_result);
+//    //console.log(gnits_meter_result);
+//  });
+// }
 
 
 
 
 
-    // function demo_bvrith_run_query() {
-    //   demo_bvrith_con.query("SELECT * FROM `bvrith_data` WHERE `tstamp` IN ( SELECT MAX(`tstamp`) FROM bvrith_data GROUP BY `meter_ID` ) order by `tstamp` DESC",
-    //   function (err, result, fields) {
-    //    if (err) throw err;
-    //    bvrith_meter_result = result;
-    //    //console.log(meter_result);
-    //   //io.sockets.emit('vvit_meter_data', meter_result);
-    //   //console.log(vvit_last_socket);
-    //    io.sockets.emit('bvrith_meter_data', bvrith_meter_result);
-    //    //console.log(gnits_meter_result);
-    //  });
-    // }
+// function demo_bvrith_run_query() {
+//   demo_bvrith_con.query("SELECT * FROM `bvrith_data` WHERE `tstamp` IN ( SELECT MAX(`tstamp`) FROM bvrith_data GROUP BY `meter_ID` ) order by `tstamp` DESC",
+//   function (err, result, fields) {
+//    if (err) throw err;
+//    bvrith_meter_result = result;
+//    //console.log(meter_result);
+//   //io.sockets.emit('vvit_meter_data', meter_result);
+//   //console.log(vvit_last_socket);
+//    io.sockets.emit('bvrith_meter_data', bvrith_meter_result);
+//    //console.log(gnits_meter_result);
+//  });
+// }
 
 
+// function pvpsit_run_query_peak() {
+//   pvpsit_con.query("SELECT `tstamp`,`meter_ID`, `Ptot` FROM `pvpsit_data` WHERE `Ptot` =( SELECT MAX(`Ptot`) FROM `pvpsit_data` WHERE DATE(`tstamp`) = '2019-11-05' ) and DATE(`tstamp`) = '2019-11-05'",
+//   function (err, result, fields) {
+//    if (err) throw err;
+//    pvpsit_meter_result = result;
+//    console.log(pvpsit_meter_result);
+//   //io.sockets.emit('vvit_meter_data', meter_result);
+//   //console.log(vvit_last_socket);
+//    io.sockets.emit('pvpsit_peak_meter_data', pvpsit_meter_result);
+//    //console.log(gnits_meter_result);
+//  });
+// }
 
 //  function vvit_run_query(vvit_meterID) {
 //  var query_string = "select * from `vvit_data` where `tstamp` = (select MAx(`tstamp`) from `vvit_data` where `meter_ID` = "+
@@ -711,8 +714,8 @@ io.sockets.on('connection', function(socket){
 
 
 
-  var myresult=[];
-  var A_total_result=[];
+var myresult=[];
+var A_total_result=[];
 
 //  var result_su=[];
 
@@ -799,23 +802,8 @@ setInterval(
 //    io.sockets.emit('su_data_msg', su_registers);
 // };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 },
-
 15 * 1000
-
 ); // 60 * 1000 milsec
 
 
@@ -823,19 +811,15 @@ setInterval(
 
 setInterval(
   function() {
-
-
-   console.log('received query for A block total');
-    //var a_query = 'SELECT * FROM `block_totals` order by tstamp desc limit 120';
-    var a_query='SELECT * FROM (SELECT * FROM `block_totals` order by tstamp DESC limit 120) sub ORDER BY `tstamp` ASC'
-    con.query(a_query, function (err, result, fields) {
-    if (err) throw err;
-    A_history_result = result;
+  console.log('received query for A block total');
+  //var a_query = 'SELECT * FROM `block_totals` order by tstamp desc limit 120';
+  var a_query='SELECT * FROM (SELECT * FROM `block_totals` order by tstamp DESC limit 120) sub ORDER BY `tstamp` ASC'
+  con.query(a_query, function (err, result, fields) {
+  if (err) throw err;
+  A_history_result = result;
   io.sockets.emit('a_block_history', A_history_result);
   console.log('server sending A block historical data');
     });
-
-
   },
   10 * 1000
   );

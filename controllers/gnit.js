@@ -20,15 +20,19 @@ meter.getGNITdataPeak = async function (req, res) {
   var i;
   const resultsArray = [];
   for (i = 2; i < 13; i++){
-    const GNITpeakQuery = `SELECT `tstamp`, `meter_ID`, `Ptot` FROM `gnits_data` WHERE `Ptot` =( SELECT MAX(`Ptot`) FROM `gnits_data` WHERE DATE(`tstamp`) = CURDATE()-1 AND `meter_ID` = "+mids[i]+" ) AND DATE(`tstamp`) = CURDATE()-1 AND `meter_ID` = ${db.escape(i)}`
+    const GNITpeakQuery = `SELECT tstamp, meter_ID, Ptot FROM gnits_data WHERE Ptot =( SELECT MAX(Ptot) FROM gnits_data WHERE DATE(tstamp) = CURDATE()-1 AND meter_ID = ${db.escape(i)} ) AND DATE(tstamp) = CURDATE()-1 AND meter_ID = ${db.escape(i)}`
 
     db.query(GNITpeakQuery, function (err, result, fields) {
-      if (err) res.status(500).send(err);
-      resultsArray.push(result);
+      if (err) {
+        res.status(500).send(err);
+        console.log('No data recieved')
+        resultsArray.push(err)        
+      }
+      else resultsArray.push(result);
     });
   }
   res.json(resultsArray);
-  console.log('Peaks have been sent');
+  console.log('Results have been sent');
 };
 
 module.exports = meter;
