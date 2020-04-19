@@ -1,23 +1,36 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var meterRouter = require('./routes/meter');
-var collegeRouter = require('./routes/colleges');
+const authRouter = require("./routes/auth");
+const meterRouter = require("./routes/meter");
+const collegeRouter = require("./routes/colleges");
 
-var app = express();
+// authToken middleware
+// const clientToken = require("./middlewares/clientToken.js");
 
-app.use(logger('dev'));
+const app = express();
+
+app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/meter', meterRouter);
-app.use('/users', usersRouter);
-app.use('/college', collegeRouter);
+/**
+  Middleware call to check Authorization
+*/
+app.use((req, res, next) => {
+  if (req.originalUrl === "/auth/createClient" || req.originalUrl === "/auth/getToken" || req.originalUrl === "/health/status") {
+    next();
+  } else {
+    // clientToken(req, res, next);
+    console.log("Token Check");
+    next();
+  }
+});
+
+app.use("/auth", authRouter);
+app.use("/meter", meterRouter);
+app.use("/college", collegeRouter);
 
 module.exports = app;
