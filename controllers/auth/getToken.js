@@ -6,10 +6,10 @@
 
 // Require JWT
 const jwt = require("jsonwebtoken");
-const { jwtSecret, catExpiry } = require("../../config/jwtSecret");
+const { jwtSecret, catExpiry } = require("../../configs/jwtSecret");
 
 // requiring DB pool
-const { auth_con: db } = require('../configs/db.js');
+const { auth_con: db } = require("../../configs/db.js");
 
 const sendError = require("../../utils/errorHandle");
 const sendData = require("../../utils/sendData");
@@ -30,7 +30,7 @@ async function getToken(req, res) {
   const query = `SELECT secret FROM api_client WHERE id=${db.escape(clientId)}`;
   try {
     const dbResponse = await db.query(query);
-    clientData = dbResponse[0];
+    [clientData] = dbResponse;
   } catch (err) {
     return sendError(res, 400, err);
   }

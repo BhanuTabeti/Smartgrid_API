@@ -1,7 +1,6 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-
 const authRouter = require("./routes/auth");
 const meterRouter = require("./routes/meter");
 const collegeRouter = require("./routes/colleges");

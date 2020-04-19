@@ -1,4 +1,4 @@
-const { auth_con: db } = require("../config/db");
+const { auth_con: db } = require("../configs/db");
 
 // User object constructor (Define what need to insert in User table, here)
 const User = {};

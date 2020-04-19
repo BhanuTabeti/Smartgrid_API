@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "lint": "eslint app.js controllers/ middlewares/ routes/ utils/ configs/ models/"
+    "watch:start": "npm run lint && nodemon ./bin/www;",
+    "lint": "eslint app.js controllers/ middlewares/ routes/ utils/ configs/ models/",
+    "lint:fix": "eslint --fix controllers/ middlewares/ routes/ utils/ config/  models/"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

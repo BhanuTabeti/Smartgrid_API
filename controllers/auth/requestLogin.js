@@ -2,7 +2,7 @@ const crypto = require("crypto");
 
 // Require JWT
 const jwt = require("jsonwebtoken");
-const { jwtSecret, uatExpiry } = require("../../config/jwtSecret");
+const { jwtSecret, uatExpiry } = require("../../configs/jwtSecret");
 
 // requiring DB models
 const User = require("../../models/user");
