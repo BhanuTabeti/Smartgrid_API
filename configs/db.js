@@ -1,8 +1,8 @@
 const mysql = require("mysql");
 
-//To do - add exceptions for connection errors
+//  To do - add exceptions for connection errors
 
-var pool = {};
+const pool = {};
 
 pool.auth_con = mysql.createPool({
   host: process.env.AUTH_DB_HOST,

@@ -311,17 +311,17 @@ var vvit_meterID='2';
 //   socketPath: '/var/run/mysqld/mysqld.sock'
 // });
 
-// var con = mysql.createConnection({
-//   host: "127.0.0.1",
-//   port: "10001",
-//   user: "root",
-//   password: "Sglab1",
-//   database: "iith_ems"
-// });
-// con.connect(function(err) {
-//   if (err) throw err;
-//   console.log("Mysql connection opened with IITH database!");
-// });
+var con = mysql.createConnection({
+  host: "127.0.0.1",
+  port: "10001",
+  user: "root",
+  password: "Sglab1",
+  database: "iith_ems"
+});
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Mysql connection opened with IITH database!");
+});
 
 // var vvit_con = mysql.createConnection({
 //   host: "127.0.0.1",
