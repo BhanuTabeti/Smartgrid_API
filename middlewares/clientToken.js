@@ -14,7 +14,7 @@ const { jwtSecret } = require("../configs/jwtSecret");
 const { sendError } = require("../utils/errorHandle");
 
 // requiring DB pool
-const { auth_con: db } = require("../configs/db.js");
+// const { auth_con: db } = require("../configs/db.js");
 
 const clientToken = async (req, res, next) => {
   const token = req.headers["x-access-token"] || req.headers.authorization; // Express headers are auto converted to lowercase
@@ -26,28 +26,28 @@ const clientToken = async (req, res, next) => {
       return sendError(res, 400, err);
     }
     const { clientId } = decoded;
-    const query = `SELECT grant_type,scope FROM api_client WHERE id=${db.escape(clientId)}`;
-    try {
-      const dbResponse = await db.query(query);
-      const [clientData] = dbResponse;
-      if (typeof clientData === "undefined") {
-        return sendError(res, 400, "Wrong Client Token");
-      }
-      const { scope } = clientData;
-      let url = req.originalUrl.split("/")[1];
+    // const query = `SELECT grant_type,scope FROM api_client WHERE id=${db.escape(clientId)}`;
+    // try {
+    //   const dbResponse = await db.query(query);
+    //   const [clientData] = dbResponse;
+    //   if (typeof clientData === "undefined") {
+    //     return sendError(res, 400, "Wrong Client Token");
+    //   }
+    //   const { scope } = clientData;
+    //   let url = req.originalUrl.split("/")[1];
 
-      // handle scope for clients, whome urls start from
-      // /client/xyz/
-      if (url === "/client") {
-        url = req.originalUrl.split("/")[3];
-      }
-      // check for scope
-      if (!scope.includes(url)) {
-        return sendError(res, 400, "Not in scope");
-      }
-    } catch (err) {
-      return sendError(res, 400, err);
-    }
+    //   // handle scope for clients, whome urls start from
+    //   // /client/xyz/
+    //   if (url === "/client") {
+    //     url = req.originalUrl.split("/")[3];
+    //   }
+    //   // check for scope
+    //   if (!scope.includes(url)) {
+    //     return sendError(res, 400, "Not in scope");
+    //   }
+    // } catch (err) {
+    //   return sendError(res, 400, err);
+    // }
     req.clientId = clientId;
     next();
   } else {

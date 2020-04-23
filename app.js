@@ -6,7 +6,7 @@ const meterRouter = require("./routes/meter");
 const collegeRouter = require("./routes/colleges");
 
 // authToken middleware
-// const clientToken = require("./middlewares/clientToken.js");
+const clientToken = require("./middlewares/clientToken.js");
 
 const app = express();
 
@@ -22,9 +22,7 @@ app.use((req, res, next) => {
   if (req.originalUrl === "/auth/createClient" || req.originalUrl === "/auth/getToken" || req.originalUrl === "/health/status") {
     next();
   } else {
-    // clientToken(req, res, next);
-    console.log("Token Check");
-    next();
+    clientToken(req, res, next);
   }
 });
 

@@ -26,7 +26,7 @@ meter.getReading = async function (req, res) {
   });
 };
 
-meter.getAblockHist = async function (req, res) {
+meter.getBlockTotal = async function (req, res) {
   console.log("received query for A block total");
 
   const aQuery = "SELECT * FROM `block_totals` order by tstamp desc limit 120";
@@ -34,7 +34,7 @@ meter.getAblockHist = async function (req, res) {
   db.query(aQuery, (err, result) => {
     if (err) res.status(500).send(err);
 
-    res.json(result);
+    res.send(result);
     console.log("server sending A block historical data");
   });
 };

@@ -1,11 +1,11 @@
 const express = require("express");
-const { getReading, getAblockHist } = require("../controllers/meter");
+const { getReading, getBlockTotal } = require("../controllers/meter");
 
 const router = express.Router();
 
 /* GET users listing. */
 router.get("/", getReading);
 
-router.get("/history", getAblockHist);
+router.get("/blocktotal", getBlockTotal);
 
 module.exports = router;
