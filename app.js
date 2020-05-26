@@ -2,11 +2,11 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const authRouter = require("./routes/auth");
-const meterRouter = require("./routes/meter");
+const iithRouter = require("./routes/iith");
 const collegeRouter = require("./routes/colleges");
 
 // authToken middleware
-const clientToken = require("./middlewares/clientToken.js");
+// const clientToken = require("./middlewares/clientToken.js");
 
 const app = express();
 
@@ -22,12 +22,13 @@ app.use((req, res, next) => {
   if (req.originalUrl === "/auth/createClient" || req.originalUrl === "/auth/getToken" || req.originalUrl === "/health/status") {
     next();
   } else {
-    clientToken(req, res, next);
+    // clientToken(req, res, next);
+    next();
   }
 });
 
 app.use("/auth", authRouter);
-app.use("/meter", meterRouter);
+app.use("/iith", iithRouter);
 app.use("/college", collegeRouter);
 
 module.exports = app;
