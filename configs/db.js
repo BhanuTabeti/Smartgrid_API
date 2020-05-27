@@ -71,7 +71,7 @@ pool.root_con = mysql.createPool({
   database: process.env.ROOT_DB
 });
 
-pool.bh_con = mysql.createPool({
+pool.iith_ss_con = mysql.createPool({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
   user: process.env.DB_USER,

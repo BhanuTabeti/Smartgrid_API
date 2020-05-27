@@ -1,7 +1,7 @@
 const { root_con: db } = require("../configs/db.js");
 
 const sendData = require("../utils/sendData");
-// const sendError = require("../utils/errorHandle");
+const sendError = require("../utils/errorHandle");
 
 const iith = {};
 
@@ -23,9 +23,9 @@ iith.getReading = async function (req, res) {
   db.query(query, (err, result) => {
     if (err) {
       console.log(err);
-      res.send(err);
+      return sendError(res, 400, err);
     }
-    res.send(result);
+    return sendData(res, 200, result[0]);
   });
 };
 
@@ -36,8 +36,9 @@ iith.getBlockTotal = async function (req, res) {
   const aQuery = `SELECT * FROM block_totals WHERE tstamp = (select max(tstamp) from block_totals) AND block_code = ${db.escape(block)}`;
 
   db.query(aQuery, (err, result) => {
-    if (err) res.status(500).send(err);
+    if (err) return sendError(res, 400, err);
 
+    console.log(result);
     return sendData(res, 200, result[0]);
     // console.log("server sending A block historical data");
   });
@@ -60,7 +61,7 @@ iith.getBlockActivePower = async function (req, res) {
   const query = `SELECT row2 as panel, total_active_power as power ,UNIX_TIMESTAMP(NOW()) - UNIX_TIMESTAMP(date) as time_elapsed FROM sensorreadings WHERE id IN ( SELECT MAX(id) FROM sensorreadings GROUP BY row2 ) AND block = ${db.escape(blockString)} order by row2`;
 
   db.query(query, (err, result) => {
-    if (err) res.status(500).send(err);
+    if (err) return sendError(res, 400, err);
 
     return sendData(res, 200, result);
     // console.log("server sending A block historical data");
@@ -83,9 +84,10 @@ iith.getPowerForGraph = async function (req, res) {
   db.query(query, (err, result) => {
     if (err) {
       console.log(err);
-      res.send(err);
+      return sendError(res, 400, err);
     }
-    res.send(result);
+
+    return sendData(res, 200, result);
   });
 };
 
@@ -105,9 +107,9 @@ iith.getVoltageForGraph = async function (req, res) {
   db.query(query, (err, result) => {
     if (err) {
       console.log(err);
-      res.send(err);
+      return sendError(res, 400, err);
     }
-    res.send(result);
+    return sendData(res, 200, result);
   });
 };
 
@@ -127,9 +129,9 @@ iith.getCurrentForGraph = async function (req, res) {
   db.query(query, (err, result) => {
     if (err) {
       console.log(err);
-      res.send(err);
+      return sendError(res, 400, err);
     }
-    res.send(result);
+    return sendData(res, 200, result);
   });
 };
 
@@ -149,9 +151,9 @@ iith.getPhasePowerForGraph = async function (req, res) {
   db.query(query, (err, result) => {
     if (err) {
       console.log(err);
-      res.send(err);
+      return sendError(res, 400, err);
     }
-    res.send(result);
+    return sendData(res, 200, result);
   });
 };
 
@@ -171,9 +173,9 @@ iith.getPowerFactorForGraph = async function (req, res) {
   db.query(query, (err, result) => {
     if (err) {
       console.log(err);
-      res.send(err);
+      return sendError(res, 400, err);
     }
-    res.send(result);
+    return sendData(res, 200, result);
   });
 };
 
@@ -193,9 +195,9 @@ iith.getCumulativeEnergyForGraph = async function (req, res) {
   db.query(query, (err, result) => {
     if (err) {
       console.log(err);
-      res.send(err);
+      return sendError(res, 400, err);
     }
-    res.send(result);
+    return sendData(res, 200, result);
   });
 };
 
