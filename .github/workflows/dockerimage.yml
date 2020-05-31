@@ -15,4 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag cems/api:$(date +%s)
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        docker build . -f Dockerfile -t docker.pkg.github.com/BhanuTabeti/Smartgrid_API:latest
+        docker login 
+        docker push docker.pkg.github.com/BhanuTabeti/Smartgrid_API:latest
